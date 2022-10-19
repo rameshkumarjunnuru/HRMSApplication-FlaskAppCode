@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <! -- Company Login page - Title page -->
+    <title>Humanetics Group</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='HRMS-logo.png') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<! -- Header of Login page -->
+<form action="{{url_for('login')}}" method="POST">
+    <h1>Login</h1>
+    <div class="textBox">
+        <input type="text" name="username" id="username" placeholder="Username/Email" value="{{request.form.username }}" required>
+    </div>
+    <div class="textBox">
+        <input type="password" name="password" id="password" placeholder="Password" value="{{request.form.password }}" required>
+    </div>
+</form>
+
+<! -- Login button added -->
+<a href="{{ url_for('home') }}"><button class="loginBtn">Login</button></a>
+
+<! -- Link for first time sign up and forgot password added -->
+    <div class="signup">
+        Don't have an account?
+        </br>
+        <a href="#">Sign Up</a>
+        </br>
+        <a href="#">Forgot your password?</a>
+    </div>
+
+    <div>
+        <img class="img-hr-logo" src="{{ url_for('static', filename='HRMS-logo.png') }}" alt="HRMS Logo"/>
+    </div>
+
+<! -- Add icon library -->
+<div>   
+    <!-- Add font icons -->
+    <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+    <a href="https://twitter.com/i/flow/login" class="fa fa-twitter"></a>
+    <a href="https://www.linkedin.com/login" class="fa fa-linkedin"></a>
+    <a href="https://www.google.com/" class="fa fa-google"></a>
+</div>
+
+</body>
+</html>

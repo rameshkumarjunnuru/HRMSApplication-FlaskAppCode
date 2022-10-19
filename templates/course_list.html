@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <! -- Company Login page - Title page -->
+        <title>Humanetics Home Page</title>
+        <img class="img-hr-logo" src="{{ url_for('static', filename='HRMS-logo.png') }}" width="50" height="150" alt="HRMS Logo"/>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='HRMS-logo.png') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       
+      </head>
+      <style>
+        th  {
+            background-color: #4ca1af; 
+            color: white;
+        }
+      </style>
+    <body>
+
+        <!-- Navigation -->
+        <nav class="w3-bar_w3-black">
+        <a href="#configuration" class="w3-button w3-bar-item">Configuration</a>
+        <a href="#employee list" class="w3-button w3-bar-item">Employee List</a>
+        <a href="#add employee" class="w3-button w3-bar-item">Add Employee</a>
+        <a href="#performance_ratings" class="w3-button w3-bar-item">Performance & Ratings</a>
+        <a href="{{ url_for('course_list') }}" class="w3-button w3-bar-item">Training Programs</a>
+        </nav>
+        
+        <center>
+        <h3><i>List Of Courses Designed for all Employees</i></h3>
+        <table border="2" color="" id="course">
+            <tr>
+                <th class="course">COURSE_ID</th>
+                <th>CREDIT_HOURS</th>
+                <th>COURSE_NAME</th>
+            </tr>
+            {% for course in courseSelectDetails %}
+            <tr>
+                <td>{{course[0]}}</td>
+                <td>{{course[1]}}</td>
+                <td>{{course[2]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        </center>
+        <form action="" method="POST">
+
+        </form>
+    <nav class="w3-bar_w3-black">
+     <div>
+        <label for="update_course" class="w3-button w3-bar-item">Do you want to perform any of the following operations on training Programs ?
+            <br>
+            <br>
+            <br>
+            <a href="{{ url_for('update_course') }}" class="w3-bar_w3-black"><button class="AddBtn">Update Course</button></a>
+            <a href="{{ url_for('delete_course') }}" class="w3-bar_w3-black"><button class="AddBtn">Delete Course</button></a>
+        </label>    
+        </div>  
+    </nav>
+    </body>
+</html>

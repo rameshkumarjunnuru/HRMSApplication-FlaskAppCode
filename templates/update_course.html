@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/w3css/3/w3.css">
+	
+	<head>
+	  <! -- Company Login page - Title page -->
+	  <title>Humanetics Home Page</title>
+	  <img class="img-hr-logo" src="{{ url_for('static', filename='HRMS-logo.png') }}" width="50" height="150" alt="HRMS Logo"/>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	
+	  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+	  <link rel="stylesheet" href="{{ url_for('static', filename='HRMS-logo.png') }}">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 
+	</head>
+	
+</head>
+<body>
+	<nav>		  
+	</nav>
+	<section>
+		<form method="POST" action="">
+			<div>
+			<b>COURSE ID</b><input type ="text" id="course_id" name="course_id"/>
+			<br>
+			<b>CREDIT HOURS</b>	<input type="text" id="credit_hours" name="credit_hours"/>
+			<br>
+			<b>COURSE NAME </b>	<input type="text" id="course_name" name="course_name"/>
+			<br>
+			<br>
+			<center>
+			<a href="{{ url_for('course_list') }}"><input type="submit" value="Update"></a>
+		</center>
+		</div>
+		</form>			
+	</section>	
+</body>
+</html>
